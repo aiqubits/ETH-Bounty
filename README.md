@@ -50,6 +50,12 @@ https://morph.ghost.io/developer-guide-building-a-decentralized-hotel-booking-sy
 
 除了1，2，3，4基础拍卖功能外，还需要从5，6，7三个附加功能中选择任意一个实现。
 
+![](./dodo_public_auction/image1.png)
+
+![](./dodo_public_auction/image2.png)
+
+0xB934Ce6c978c4308c387Ab47D688d970bc6aE6d2
+
 ### Arbitrum：（二选一）
 
 1）编写一个基于retryable ticket系统的layer1-》layer2跨链消息系统，需要用户对l1合约进行操作，并且通过调用retryable来改写layer2上合约的状态。

@@ -11,6 +11,7 @@ contract DeployerScript is Script {
     function run() public returns(Auction) {
         vm.startBroadcast();
 
+        // argument 3600 is 1 hour in seconds, 100 is price
         Auction publicAuction = new Auction(3600, 100);
 
         vm.stopBroadcast();
