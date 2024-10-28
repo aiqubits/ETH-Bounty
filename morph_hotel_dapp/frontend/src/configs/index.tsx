@@ -3,9 +3,8 @@ import { defaultWagmiConfig } from "@web3modal/wagmi/react/config";
 
 import { cookieStorage, createStorage } from "wagmi";
 import { morphHolesky } from "viem/chains";
-
 // Get projectId at https://cloud.walletconnect.com
-export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
+export const projectId = "016d0d1b4ca22b6d42ce52d4c7c641c2";
 
 if (!projectId) throw new Error("Project ID is not defined");
 

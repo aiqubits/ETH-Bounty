@@ -1,56 +1,64 @@
-# Frontend for Morph Holesky Starter Kit
+# Next.js TypeScript Starter Kit onchain
 
-This directory contains the frontend application for the Morph Holesky Starter Kit. It's built with Next.js and includes integration with Web3 libraries for interacting with the Morph Holesky network.
+![A screenshot of the starter kit](./screenshot.png)
 
-## Getting Started
+This starter kit is designed to provide a comprehensive template for building frontends for your dApps using Next.js, TypeScript, Shadcn, and Tailwind CSS. It includes setup for WAGMI React hooks and Viem for seamless onchain transactions. 
 
-1. Install dependencies:
+By default, this template connects to the Morph Sepolia testnet.
 
-   ```
-   yarn install
-   ```
+## 🧑‍🚀 Initial Setup
 
-2. Run the development server:
+### Environment Configuration
 
-   ```
-   yarn dev
-   ```
+Before you start, you need to set up your environment variables. Create a `.env.local` file in the root directory by running:
 
-3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Project Structure
-
-- `pages/`: Contains the main pages of the application
-- `components/`: Reusable React components
-- `styles/`: CSS and styling files
-- `utils/`: Utility functions and helpers
-
-## Connecting to Morph Holesky
-
-The application is pre-configured to connect to the Morph Holesky network. Ensure you have a Web3-enabled browser or wallet extension installed to interact with the dApp.
-
-## Customizing the Frontend
-
-Feel free to modify the components and pages to suit your specific dApp requirements. The current setup provides a basic structure that you can build upon.
-
-## Building for Production
-
-To create a production build:
-
-```
-yarn build
+```bash
+cp .env.example .env.local
 ```
 
-Then, to start the production server:
+In the file, update the `NEXT_PUBLIC_PROJECT_ID` variable with your WalletConnect project ID. You can obtain one by registering your project at [WalletConnect Cloud](https://cloud.walletconnect.com/).
 
+### Install Dependencies 
+
+```bash
+npm install
+# or
+yarn 
+# or
+pnpm install
+# or
+bun install
 ```
-yarn start
+
+### Running the Development Server
+
+To run the development server, execute one of the following commands in your terminal:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Learn More
+Visit [http://localhost:3000](http://localhost:3000) to see your application in action. Begin by editing `app/page.tsx` to make changes and see them reflected in real time.
 
-To learn more about the technologies used in this frontend:
+## 🧞 Features
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Wagmi Documentation](https://wagmi.sh/)
-- [Morph Holesky Documentation](https://docs.morphl2.io/)
+- **TypeScript**: Utilize the strong typing of TypeScript to write more robust and error-free code.
+- **Tailwind CSS**: Style your application efficiently using utility-first CSS.
+- **WAGMI Hooks**: Manage blockchain wallet and network interactions with ease.
+- **Viem**: Handle on-chain interactions directly within your frontend application.
+- **Morph Sepolia Testnet**: Connect to the Morph testnet to develop and test your dApps.
+
+## ✨ Learning Resources
+
+- **Morph L2**: Learn more about Morph and its capabilities by visiting [Morph Layer 2 Official Site](https://www.morphl2.io/).
+- **Morph Documentation**: For detailed information on how Morph works and how to integrate it into your applications, check out the [Morph Docs](https://docs.morphl2.io/docs/how-morph-works/intro/).
+
+## 🚀 Deployment
+
+Deploy your application with ease using platforms like [Vercel](https://vercel.com/), which provides out-of-the-box support for Next.js applications, or [Juno](https://juno.build), which gives you full control over your dApp by enabling its deployment on Web3. Refer to platform-specific guides for details on deploying Next.js applications.
