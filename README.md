@@ -54,7 +54,7 @@ https://morph.ghost.io/developer-guide-building-a-decentralized-hotel-booking-sy
 
 ![](./dodo_public_auction/image2.png)
 
-0xB934Ce6c978c4308c387Ab47D688d970bc6aE6d2
+0x38A5804b5eF710A01CEA8e1701C4a834298064CA
 
 ### Arbitrum：（二选一）
 

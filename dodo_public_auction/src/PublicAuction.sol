@@ -67,7 +67,7 @@ contract Auction {
         emit Bid(msg.sender, msg.value);
     }
 
-    function withdraw() public returns (bool) {
+    function bidderWithdraw() public returns (bool) {
         require(block.timestamp > biddingEnd, "Bidding is still ongoing.");
         uint amount = bids[msg.sender];
         require(amount > 0, "You have not bid.");
@@ -79,13 +79,21 @@ contract Auction {
         return true;
     }
 
-    function auctionEnd() public {
+    function auctionEndWithdraw() public {
         require(block.timestamp > biddingEnd, "Bidding is still ongoing.");
         require(msg.sender == owner, "Only the owner can withdraw.");
-        uint amount = address(this).balance;
-        require(amount > 0, "Amount is zero.");
 
-        payable(msg.sender).transfer(amount);
+        uint highestbidend = getHighestBid();
+        require(highestbidend > 0, "Highestbid is zero, Can't withdraw.");
+
+        uint amount = address(this).balance;
+        if (amount >= highestbidend) {
+            payable(msg.sender).transfer(highestbidend);
+        } else {
+            payable(msg.sender).transfer(amount);
+        }
+
+
 
         emit AuctionEnd(highestBidder, highestBid);
     }
