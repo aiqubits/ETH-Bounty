@@ -200,17 +200,6 @@ cargo expand --all-features --release --target=<YOUR_ARCHITECTURE>
 
 Where you can find `YOUR_ARCHITECTURE` by running `rustc -vV | grep host`. For M1 Apple computers, for example, this is `aarch64-apple-darwin`.
 
-## test
-```
-cargo stylus check --no-verify
-
-cast call --rpc-url 'http://localhost:8547' --private-key 0xb6b15c8cb491557369f3c7d2c287b053eb229daa9c22138887752191c9520659 0x677c7e0584b0202417762ce06e89dbc5935a7399 "number()(uint256)"
-
-cast send --rpc-url 'http://localhost:8547' --private-key 0xb6b15c8cb491557369f3c7d2c287b053eb229daa9c22138887752191c9520659 0x677c7e0584b0202417762ce06e89dbc5935a7399 "increment()"
-
-```
-
-
 ## License
 
 This project is fully open source, including an Apache-2.0 or MIT license at your choosing under your own copyright.

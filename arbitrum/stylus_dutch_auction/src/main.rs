@@ -2,5 +2,5 @@
 
 #[cfg(feature = "export-abi")]
 fn main() {
-    dutch_auction::print_abi("MIT-OR-APACHE-2.0", "pragma solidity ^0.8.23;");
+    stylus_dutch_auction::print_abi("MIT-OR-APACHE-2.0", "pragma solidity ^0.8.23;");
 }

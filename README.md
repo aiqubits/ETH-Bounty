@@ -64,4 +64,4 @@ https://morph.ghost.io/developer-guide-building-a-decentralized-hotel-booking-sy
 
 2）用stylus （rust或者c/c++语言）重新改写uniswap v1或v2 (或者其他你想要改写的合约)
 
-![alt text](./arbitrum/image.png)
+![alt text](./arbitrum/image.jpg)
