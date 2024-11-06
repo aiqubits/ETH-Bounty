@@ -70,6 +70,8 @@ contract Auction {
 
     function bidderWithdraw() public returns (bool) {
         require(block.timestamp > biddingEnd, "Bidding is still ongoing.");
+        require(msg.sender != highestBidder, "You are the highest bidder, Can't withdraw.");
+
         uint amount = bids[msg.sender];
         require(amount > 0, "You have not bid.");
         
