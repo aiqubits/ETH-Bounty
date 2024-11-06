@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.21;
 
+
 contract Auction {
     // 拍卖人
     address payable public owner;
@@ -21,7 +22,7 @@ contract Auction {
 
     // 出价者地址 => 最近一次出价时间 // new feat2
     mapping(address => uint) public lastBidTime;
-    uint public cooldownPeriod = 5 minutes; // Cooldown period in seconds
+    uint public cooldownPeriod = 5 * 60; // Cooldown period in seconds 5 * 60
 
     // 出价者地址 => 出价数量
     event Bid(address bidder, uint amount);
@@ -46,16 +47,16 @@ contract Auction {
         lastBidTime[msg.sender] = block.timestamp;
 
         // Add bidding end time
-        if (biddingEnd - block.timestamp < 5 minutes) {
-            biddingEnd += (5 * 60); // Extend the auction by 5 minutes if a bid is placed in the last 5 minutes
+        if (biddingEnd - block.timestamp < cooldownPeriod) {
+            biddingEnd += cooldownPeriod; // Extend the auction by 5 minutes if a bid is placed in the last 5 minutes
         }
 
         bids[msg.sender] += msg.value;
 
         // Add price weight when 5 minutes left
         uint adjustedBid = msg.value;
-        if (biddingEnd - block.timestamp <= (5 * 60) ) {
-            adjustedBid = (msg.value * 12) / 10; // Adjust the bid by a factor of 1.5 in the last 5 minutes
+        if (biddingEnd - block.timestamp <= cooldownPeriod ) {
+            adjustedBid = (msg.value * 12) / 10; // Adjust the bid by a factor of 1.2 in the last 5 minutes
             addWeightBidder = msg.sender;
         }
 

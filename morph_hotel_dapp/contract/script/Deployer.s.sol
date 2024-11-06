@@ -8,7 +8,7 @@ import {HotelBooking} from "../src/Booking.sol";
 contract DeployerScript is Script {
     function setUp() public {}
 
-   function run() public returns(HotelBooking) {
+    function run() public returns(HotelBooking) {
         vm.startBroadcast();
         HotelToken token = new HotelToken();
         HotelBooking hotelBooking = new HotelBooking(address(token));
